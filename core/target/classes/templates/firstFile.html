@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="en">
+<head>
+    <title>Tweet List</title>
+    <link rel="stylesheet"
+          href="https://047f018102c8c8f717a6-1efb167bc857a9871c34d9fa1ea1cbde.ssl.cf1.rackcdn.com/foundation5.3.0.min.css" />
+    <link rel="icon" href="data:;base64,=" />
+
+   <center><legend><label> <h1>  Tweet List </h1></label> </legend> </center>
+
+
+    <style>
+
+
+            body  {
+            background-image: url("http://s32.postimg.org/k4t0c7r2t/twitter_list_1_940x492_2111.jpg");
+            background-color: #cccccc;
+            background-repeat: repeat;
+            background-position: left top;
+            background-attachment: scroll;
+            background-size: cover;
+            }
+            form {
+
+            margin : auto
+            }
+
+
+
+
+            #tableContainer-1 {
+            height: 100%;
+            width: 100%;
+            display: table;
+            }
+            #tableContainer-2 {
+            vertical-align: middle;
+            display: table-cell;
+            height: 100%;
+            }
+            #myTable {
+            margin: 0 auto;
+            }
+    </style>
+</head>
+<body>
+
+<form>
+
+
+
+
+        <div id="tableContainer-1">
+            <div id="tableContainer-2">
+                <table  id="myTable" border="border">
+                    <tr th:each="list1: *{list}">
+                        <td  th:text="${list1}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--<tr>-->
+        <!--<th><h3> Tweets</h3> </th>-->
+        <!--</tr>-->
+    </form>
+
+        <form th:action="@{/result1}">
+       <pre>          <input type="submit" value="Check Result" align="center"/> </pre>
+        </form>
+
+
+
+</body>
+</html>

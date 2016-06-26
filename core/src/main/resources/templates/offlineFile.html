@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:alt="http://www.w3.org/1999/xhtml" class="no-js" lang="en">
+<head>
+
+ <h1 align="center" class="div_text_shadow" > Result - Offline text</h1>
+<style>
+
+    .div_text_shadow
+    {
+    color: rgb(242, 67, 67);
+    font-size: 50px;
+    background-color: rgb(99, 23, 23);
+    text-shadow: rgb(46, 46, 46) 0px 4px 5px;
+    }
+
+    th{
+    align: center;
+    }
+    tr,label {
+    align: center;
+    }
+
+    h3{
+    align: center;
+    }
+    body {
+    position: relative;
+    }
+    table {
+    border: 1px solid black;
+    width: 100%;
+    }
+    .ad {
+    float:center;
+    width:300px;
+    height: 500px;
+    background-color: #a2e89f;
+    }
+    .table_wr {
+    position: relative;
+    <!--left: 200px;-->
+    align: center;
+
+    <!--right: 200px;-->
+    }
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<form>
+
+    <table>
+    <tr>
+        <td><img th:src="@{${url1}}" alt="Graph1" /> </td>
+        <td> <img th:src="@{${url2}}" alt="Graph2"  /> </td>
+    </tr>
+    </table>
+
+    <div class="table_wr">
+  <table border="border">
+
+        <tr>
+            <th nowrap="nowrap" colspan="4" align="center"><h2> Sentiment Result of Tweets </h2> </th>
+        </tr>
+
+        <tr>
+            <th align="center"><h2> <label> Method</label> </h2> </th>
+            <th align="center"> <label>Negative </label></th>
+            <th align="center"><label> Neutral</label></th>
+            <th><label> Positive</label> </th>
+        </tr>
+        <tr>
+            <td align="center"> <h3> GetDatumBox :  </h3></td>
+            <td  th:text="${result1[0]}" align="center"></td>
+            <td th:text="${result1[1]}" align="center"></td>
+            <td th:text="${result1[2]}" align="center"></td>
+
+        </tr>
+        <tr >
+            <td align="center"><h3> OurAlgorithm : </h3>  </td>
+            <td th:text="${result2[0]}" align="center"></td>
+            <td th:text="${result2[1]}" align="center"></td>
+            <td th:text="${result2[2]}" align="center"></td>
+
+        </tr>
+
+ </table>
+        </div>
+
+</form>
+</body>
+</html>
